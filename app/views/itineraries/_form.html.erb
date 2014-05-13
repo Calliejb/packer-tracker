@@ -1,0 +1,25 @@
+<%= form_for(@itinerary) do |f| %>
+  <% if @itinerary.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@itinerary.errors.count, "error") %> prohibited this itinerary from being saved:</h2>
+
+      <ul>
+      <% @itinerary.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
