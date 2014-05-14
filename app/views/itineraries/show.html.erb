@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @itinerary.name %>
-</p>
 
 <p>
   <strong>Country:</strong>
@@ -11,8 +7,9 @@
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @itinerary.date %>
+  <strong>Dates:</strong>
+  <%= @itinerary["date_start(1i)"] %> <%= @itinerary["date_start(2i)"] %> <%= @itinerary["date_start(3i)"] %>
+  <%= @itinerary.date_end %>
 </p>
 
 <%= link_to 'Edit', edit_itinerary_path(@itinerary) %> |

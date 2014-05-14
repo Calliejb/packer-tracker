@@ -5,9 +5,6 @@ class SessionsController < ApplicationController
 	def create
 		@user = User.where(:email => params[:session][:email]).first
 
-		puts "a;oj;oaijdo;s jcij;ol++++++++++++++++"
-		puts @user.username
-
 		if @user && @user.authenticate(params[:session][:password])
 			session[:remember_token] = @user.id
 			@current_user = @user

@@ -7,8 +7,7 @@ class ItinerariesController < ApplicationController
     @itineraries = Itinerary.all
   end
 
-  # GET /itineraries/1
-  # GET /itineraries/1.json
+
   def show
     @itinerary = Itinerary.find(params[:id])
   end
@@ -18,38 +17,24 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new
   end
 
-  # GET /itineraries/1/edit
   def edit
   end
 
-  # POST /itineraries
-  # POST /itineraries.json
   def create
-    @itinerary = Itinerary.new(itinerary_params)
-
-    respond_to do |format|
-      if @itinerary.save
-        format.html { redirect_to @itinerary, notice: 'Itinerary was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @itinerary }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @itinerary.errors, status: :unprocessable_entity }
-      end
-    end
+    Itinerary.create(itinerary_params)
+    redirect_to itineraries_path
   end
 
-  # PATCH/PUT /itineraries/1
-  # PATCH/PUT /itineraries/1.json
+
   def update
-    respond_to do |format|
-      if @itinerary.update(itinerary_params)
-        format.html { redirect_to @itinerary, notice: 'Itinerary was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @itinerary.errors, status: :unprocessable_entity }
-      end
+
+    @itinerary = Itinerary.find(params[:id])
+    if @itinerary.update(itinerary_params)
+      redirect_to itineraries_path
+    else
+      render 'edit'
     end
+
   end
 
   # DELETE /itineraries/1
@@ -70,6 +55,6 @@ class ItinerariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def itinerary_params
-      params.require(:itinerary).permit(:name, :country, :date)
+      params.require(:itinerary).permit(:name, :country, :date_start, :date_end)
     end
 end

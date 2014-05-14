@@ -2,8 +2,8 @@ PackerTrackerApp::Application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
   resources :itineraries, except: [:destroy]
+  resources :itinerary_lists
 
-  get 'users/:id' => 'users#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

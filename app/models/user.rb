@@ -1,10 +1,17 @@
 require "bcrypt"
 class User
   include Mongoid::Document
+  include Mongoid::Paperclip
+
+  has_mongoid_attached_file :picture
+
+  validates_attachment_content_type :picture , :content_type => /\Aimage\/.*\Z/
+
+
   field :username, type: String
   field :email, type: String
   field :password_digest, type: String
-  has_many :itineraries
+  has_many :itinerary_lists
 
   def password
     @password
