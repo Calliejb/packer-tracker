@@ -1,14 +1,43 @@
-class ItineraryLists_Controller < ApplicationController
+class ItineraryListsController < ApplicationController
 
-def new
-end
+  def index
+    @itinerarylists = ItineraryList.all
+  end
 
-def create
+  def show
+  	@itinerarylist = ItineraryList.find(params[:id])
+  end
 
+  def new
+    @itinerarylist = ItineraryList.new
+    3.times { @itinerarylist.itineraries.build }
+  end
 
-end
+  def create
+  	@itinerarylist = ItineraryList.new(params[:itinerarylist])
+  	if @itinerarylist.save
+  		flash[:notice] = "Created a new Itinerary!"
+  		redirect_to @itinerarylist
+  	else
+  		render :action => 'new'
+  	end
+  end
 
+  def edit
+    @itinerarylist = ItineraryList.find(params[:id])
+  end
 
+  def update
+    @itinerarylist = ItineraryList.find(params[:id])
+    if @itinerarylist.update(params.require(:itinerarylist).permit(:name, :itinerary_ids => []))
+      redirect_to burritos_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+  end
 
 
 end

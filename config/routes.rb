@@ -1,15 +1,17 @@
 PackerTrackerApp::Application.routes.draw do
-  resource :sessions, only: [:new, :create, :destroy]
+  
+  resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show]
   resources :itineraries, except: [:destroy]
-  resources :itinerary_lists
+  resources :itinerary_lists, except: [:destroy]
+  resources :profiles
 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

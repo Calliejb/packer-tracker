@@ -1,0 +1,21 @@
+<%= form_for(@itinerarylist) do |f| %>
+	
+	Name: <%= f.text_field :name %><br>
+
+	<% f.fields_for :itineraries do |builder| %>
+	
+		<%= builder.label :country, "Add a Country" %><br>
+		<%= builder.text_field :country %>
+
+		<%= builder.label :date_start, "Arrival Date" %><br>
+		<%= builder.date_select :date_start, id: "dateField" %>
+
+		<%= builder.label :country, "Departure Date" %><br>
+		<%= builder.date_select :date_end, id: "dateField" %>
+
+	<% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
