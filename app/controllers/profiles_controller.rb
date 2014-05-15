@@ -1,8 +1,22 @@
 class ProfilesController < ApplicationController
-  def show
+  
+  
+  def new
+  	@profile = Profile.new
   end
 
-  def new
+  def create
+  	@profile = Profile.new(params[:profile])
+  	if @profile.save
+  		flash[:notice] = "Your profile has been saved!"
+  		redirect_to @profile
+  	else
+  		render :action => 'new'
+  	end
+  end
+
+  def show
+  	@profile = Profile.find(params[:id])
   end
 
   def edit
@@ -10,4 +24,5 @@ class ProfilesController < ApplicationController
 
   def update
   end
+
 end

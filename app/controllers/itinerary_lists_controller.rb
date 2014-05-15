@@ -6,16 +6,19 @@ class ItineraryListsController < ApplicationController
 
   def show
   	@itinerarylist = ItineraryList.find(params[:id])
+    @itineraries = Itinerary.all
   end
 
   def new
     @itinerarylist = ItineraryList.new
+    @itineraries = Itinerary.all
     3.times { @itinerarylist.itineraries.build }
   end
 
   def create
   	@itinerarylist = ItineraryList.new(params[:itinerarylist])
-  	if @itinerarylist.save
+  	@itineraries = 
+    if @itinerarylist.save
   		flash[:notice] = "Created a new Itinerary!"
   		redirect_to @itinerarylist
   	else

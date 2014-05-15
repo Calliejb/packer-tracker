@@ -1,11 +1,8 @@
 <h1>Profiles#edit</h1>
-<p>Find me in app/views/profiles/edit.html.erb</p>
 
-<%= form_for @user, :html => { :multipart => true } do |f| %>
- 	Username: <%= f.text_field :username %>
- 	Email: <%= f.text_field :email %>
- 	Password: <%= f.password_field :password %>
- 	Add a profile picture: <%= f.file_field :picture %>
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>
+
+<%= link_to 'Back', itineraries_path %>
+
+
 	 

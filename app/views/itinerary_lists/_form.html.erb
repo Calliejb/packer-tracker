@@ -1,16 +1,16 @@
-<%= form_for(@itinerarylist) do |f| %>
+<%= form_for(@itinerary_list)) do |f| %>
 	
 	Name: <%= f.text_field :name %><br>
 
 <p class = fields>
-	<%= f.fields_for @itinerarylist.itineraries do |i| %>
+	<% f.fields_for @itinerary_list.itineraries do |i| %>
 	
 	<div>
 		<%= i.label :country, "Add a Country" %><br>
-		<%= i.text_field :country %><br><br>
+		<%= i.text_field :country %>
 
 		<%= i.label :date_start, "Arrival Date" %><br>
-		<%= i.date_select :date_start, id: "dateField" %><br><br>
+		<%= i.date_select :date_start, id: "dateField" %>
 
 		<%= i.label :country, "Departure Date" %><br>
 		<%= i.date_select :date_end, id: "dateField" %>
@@ -21,7 +21,6 @@
 
 
   <div class="actions">
-    <br>
     <%= f.submit %>
   </div>
 <% end %>
