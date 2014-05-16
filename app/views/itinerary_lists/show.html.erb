@@ -1,12 +1,12 @@
-<h1><%= @itinerary_list.name %></h1>
+<h1><%= @itinerarylist.name %></h1>
 
 <% for itinerary in @itinerarylist.itineraries %>
   <li><%= itinerary.country %></li>
 <% end %>
 
 
-<%= link_to "Edit", edit_itinerarylist_path(@itinerarylist) %>
+<%= link_to "Edit", edit_itinerary_list_path(@itinerarylist) %>
 <%= link_to "Delete", @itinerarylist, :confirm => "Are you sure you'd like to delete this itinerary?", :method => :delete %>
-<%= link_to "View All Itineraries", itineraries_path %>
+<%= link_to "View All Itineraries", itinerary_lists_path %>
 
-<%= link_to 'New Itinerary', new_itinerary_path %>
+<%= link_to 'New Itinerary', new_itinerary_list_path %>

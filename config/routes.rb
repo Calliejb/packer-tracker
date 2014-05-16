@@ -4,7 +4,12 @@ PackerTrackerApp::Application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :itineraries, except: [:destroy]
   resources :itinerary_lists, except: [:destroy]
-  resources :profiles
+  resources :users do
+    resources :itinerary_lists
+  end
+  resources :itinerary_lists do
+    resources :itineraries
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

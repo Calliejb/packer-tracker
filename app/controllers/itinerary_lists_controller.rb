@@ -16,8 +16,7 @@ class ItineraryListsController < ApplicationController
   end
 
   def create
-  	@itinerarylist = ItineraryList.new(params[:itinerarylist])
-  	@itineraries = 
+  	@itinerarylist = ItineraryList.new(params[:itinerarylist][:itinerary])
     if @itinerarylist.save
   		flash[:notice] = "Created a new Itinerary!"
   		redirect_to @itinerarylist

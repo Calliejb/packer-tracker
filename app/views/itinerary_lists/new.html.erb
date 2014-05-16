@@ -2,10 +2,10 @@
 	
 	Name: <%= f.text_field :name %><br>
 
-<p class = fields>
+<p>
 	<%= f.fields_for @itinerarylist.itineraries do |i| %>
 	
-	<div>
+	<div class = fields>
 		<%= i.label :country, "Add a Country" %><br>
 		<%= i.text_field :country %><br><br>
 
@@ -17,6 +17,9 @@
 	</div>
 
 	<% end %>
+
+		<%= f.hidden_field :_destroy %>
+	<%= link_to_function "remove", "remove_fields(this)" %>
 </p>
 
 

@@ -14,7 +14,11 @@
 		<h2>PackerTracker</h2>
 
 		<div class = "signupbutton"> 
-			<%= link_to "Sign up now!", new_user_path %> 
+		<% if !signed_in? %>
+        	<p><%= link_to "Sign Up Now!", new_user_path %></p>
+        <% else %>
+        	<p>Enjoy using PackerTracker!</p>
+        <% end %>
 		</div>
 
 	</div>

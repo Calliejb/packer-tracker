@@ -1,5 +1,7 @@
 
-<%= form_for @profile, :html => { :multipart => true } do |f| %>
+Edit your Profile!
+
+<%= form_for @user, :html => { :multipart => true } do |f| %>
  	Name: <%= f.text_field :name %>
  	Hometown: <%= f.text_field :hometown %>
  	About Me: <%= f.text_field :about %>

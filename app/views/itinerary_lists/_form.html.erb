@@ -1,11 +1,11 @@
-<%= form_for(@itinerary_list)) do |f| %>
+<%= form_for(@itinerary_list, @itinerary)) do |f| %>
 	
 	Name: <%= f.text_field :name %><br>
 
 <p class = fields>
 	<% f.fields_for @itinerary_list.itineraries do |i| %>
 	
-	<div>
+	<div class = "fields">
 		<%= i.label :country, "Add a Country" %><br>
 		<%= i.text_field :country %>
 
@@ -17,6 +17,8 @@
 	</div>
 
 	<% end %>
+
+
 </p>
 
 

@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:remember_token)
-    redirect_to new_sessions_path
+    redirect_to new_session_path
     # redirect to sign in page
   end
 

@@ -17,8 +17,8 @@
         <td><%= itinerary.country %></td>
         <td><%= itinerary.date_start %></td>
         <td><%= itinerary.date_end %></td>
-        <td><%= link_to 'Show', itinerary %></td>
-        <td><%= link_to 'Edit', edit_itinerary_path(itinerary) %></td>
+        <td><%= link_to 'Show', itinerary_list_itinerary_path(@itinerarylist, itinerary) %></td>
+        <td><%= link_to 'Edit', edit_itinerary_list_itinerary_path(itinerary) %></td>
         <td><%= link_to 'Delete', itinerary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

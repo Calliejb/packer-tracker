@@ -1,8 +1,24 @@
 
 <h1> Hello <%= @user.username %>! </h1>
 
+<div class = "current"> 
+		<% if !signed_in? %>
+        	<p><%= link_to "Sign Up Now!", new_user_path %></p>
+        <% else %>
+        	<p>Enjoy using PackerTracker!</p>
+        <% end %>
+		</div>
+
+
+
+<div class = "itinerarylists">
+
+
+	  <% @itinerarylists.each do |i| %>
+	  	<ul>
+	        <li><%= i.name %></li>
+	        <li><%= link_to 'See Itinerary', itinerarylist_path %></li>
+    	</ul>
+    <% end %>
+
 <%= link_to "Create a New Itinerary!", new_itinerary_list_path %>
-
-
-
-<!-- Make sure to figure out how to resize image hahahahahha -->

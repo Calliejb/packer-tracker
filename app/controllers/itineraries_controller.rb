@@ -4,7 +4,7 @@ class ItinerariesController < ApplicationController
   # GET /itineraries
   # GET /itineraries.json
   def index
-    @itineraries = Itinerary.all
+    @itineraries = @itinerarylist.itineraries.all
   end
 
 
@@ -14,7 +14,7 @@ class ItinerariesController < ApplicationController
 
   # GET /itineraries/new
   def new
-    @itinerary = Itinerary.new
+    @itinerary = @itinerarylist.itineraries.all
   end
 
   def edit
