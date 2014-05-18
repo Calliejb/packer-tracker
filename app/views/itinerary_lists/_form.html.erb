@@ -1,0 +1,39 @@
+
+<div class= "well well-lg">
+	<%= form_for(@itinerarylist) do |f| %>
+		<div class = "row">
+			<div class="form-group col-sm-3">
+				<%= f.label :name, "Itinerary Name" %><br>
+				<%= f.text_field :name %><br>
+			</div>
+		</div>
+			<%= f.fields_for :itineraries do |builder| %>
+		<div class = "row">
+				<div class="form-group col-sm-3">
+					<div class = "fields">
+
+						<%= builder.label :country, "Add a Country" %><br>
+						<%= builder.text_field :country %><br><br>
+						
+						<%= builder.label :date_start, "Arrival Date" %><br>
+						<%= builder.date_select :date_start, id: "dateField" %><br><br>
+
+						<%= builder.label :country, "Departure Date" %><br>
+						<%= builder.date_select :date_end, id: "dateField" %>
+					</div>
+
+					<%= f.hidden_field :_destroy %>
+					<%= link_to_function "remove", "remove_fields(this)" %>
+				</div>
+			<% end %>
+		</div>
+
+
+	  <div class="row">
+	  	<div class = "col-sm-3">
+	    <%= f.submit 'Submit!', class: "btn btn-lg btn-success" %>
+		</div>
+	  </div>
+	<% end %>
+
+</div>

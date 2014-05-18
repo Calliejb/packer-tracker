@@ -36,13 +36,15 @@ class ItineraryListsController < ApplicationController
   def update
     @itinerarylist = ItineraryList.find(params[:id])
     if @itinerarylist.update(params.require(:itinerary_list).permit(:name, itineraries_attributes: [:country, :date_start, :date_end]))
-      redirect_to itinerary_lists_path
+      redirect_to itinerary_list_path
     else
       render :action => 'edit'
     end
   end
 
   def destroy
+    @itinerarylist.destroy
+    redirect_to itinerary_list_path
   end
 
 

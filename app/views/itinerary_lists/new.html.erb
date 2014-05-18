@@ -1,36 +1,3 @@
-<%= form_for(@itinerarylist) do |f| %>
-	
-	<%= f.label :name %><br>
-	<%= f.text_field :name %><br>
+<h1>Create Your Itinerary</h1>
 
-<p>
-
-		<%= f.fields_for :itineraries do |builder| %>
-
-			<div class = "fields">
-		
-				<%= builder.label :country, "Add a Country" %><br>
-				<%= builder.text_field :country %><br><br>
-
-				<%= builder.label :date_start, "Arrival Date" %><br>
-				<%= builder.date_select :date_start, id: "dateField" %><br><br>
-
-				<%= builder.label :country, "Departure Date" %><br>
-				<%= builder.date_select :date_end, id: "dateField" %><br>
-			</div>
-
-				<%= f.hidden_field :_destroy %>
-				<%= link_to_function "remove", "remove_fields(this)" %>
-
-		<% end %>
-
-
-
-</p>
-
-
-  <div class="actions">
-    <br>
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render 'form' %>
