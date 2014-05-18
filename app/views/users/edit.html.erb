@@ -2,6 +2,9 @@
 Edit your Profile!
 
 <%= form_for @user, :html => { :multipart => true } do |f| %>
+	Username: <%= f.text_field :username %>
+	Email: <%= f.text_field :email %>
+	
  	Name: <%= f.text_field :name %>
  	Hometown: <%= f.text_field :hometown %>
  	About Me: <%= f.text_field :about %>

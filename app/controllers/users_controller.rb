@@ -17,10 +17,14 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def edit
+	end
+
 
 	protected
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password)
+		params.require(:user).permit(:username, :email, :password, :name, :hometown, :about, itinerary_lists_attributes: [:name, :itinerary])
 	end
 end
+

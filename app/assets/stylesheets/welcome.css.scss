@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$roboto: 'Roboto Slab', serif;
+$shadow: 'Shadows Into Light', cursive;
+
 .app-logo {
-	background-image: World-map-wallpaper.jpg;
+	background-image: url('images/World-map-wallpaper.jpg');
+	font-family: $shadow;
+	height: 200px;
 }

@@ -13,8 +13,9 @@ class User
   field :name, type: String
   field :hometown, type: String
   field :about, type: String
-  has_one :profile
-  has_many :itinerary_lists
+
+  has_many :itinerary_lists, :dependent => :destroy
+  accepts_nested_attributes_for :itinerary_lists, :allow_destroy => true
 
   def password
     @password

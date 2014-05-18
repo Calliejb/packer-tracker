@@ -3,7 +3,7 @@
 <head>
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
   <title>PackerTracker</title>
-  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
@@ -26,8 +26,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "Search Itineraries", itineraries_path %></li>
-        <li><%= link_to "New Itinerary", new_itinerary_list_path %></li>
+        <% if !signed_in? %>
+          <li><%= link_to "About", new_welcome_path %></li>
+        <% else %>
+          <li><%= link_to "New Itinerary", new_itinerary_list_path %></li>
+          <li><%= link_to "Search Itineraries", itinerary_lists_path %></li>
+        <% end %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
           <ul class="dropdown-menu">

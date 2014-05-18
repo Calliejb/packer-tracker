@@ -6,17 +6,21 @@ class ItineraryListsController < ApplicationController
 
   def show
   	@itinerarylist = ItineraryList.find(params[:id])
-    @itineraries = Itinerary.all
   end
 
   def new
     @itinerarylist = ItineraryList.new
-    @itineraries = Itinerary.all
-    3.times { @itinerarylist.itineraries.build }
+    3.times do
+      @itinerarylist.itineraries.build
+    end
+      
   end
 
+
   def create
-  	@itinerarylist = ItineraryList.new(params[:itinerarylist][:itinerary])
+    # raise params.inspect
+  	@itinerarylist = ItineraryList.new(params.require(:itinerary_list).permit(:name, itineraries_attributes: [:country, :date_start, :date_end]))
+    @itinerarylist.user = current_user
     if @itinerarylist.save
   		flash[:notice] = "Created a new Itinerary!"
   		redirect_to @itinerarylist
@@ -31,15 +35,16 @@ class ItineraryListsController < ApplicationController
 
   def update
     @itinerarylist = ItineraryList.find(params[:id])
-    if @itinerarylist.update(params.require(:itinerarylist).permit(:name, :itinerary_ids => []))
-      redirect_to burritos_path
+    if @itinerarylist.update(params.require(:itinerary_list).permit(:name, itineraries_attributes: [:country, :date_start, :date_end]))
+      redirect_to itinerary_lists_path
     else
-      render 'edit'
+      render :action => 'edit'
     end
   end
 
   def destroy
   end
+
 
 
 end

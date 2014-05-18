@@ -1,1 +1,14 @@
-<h1> Lists Itineraries </h1>
+<h1> All Itineraries! </h1>
+
+<%= @itinerarylists.each do |i| %>
+
+	<%= i.name %> <br>
+
+	<%= i.itineraries.each do |ii| %>
+
+		<strong><%= ii.country %></strong> <br>
+  			
+  			<%= link_to "Search other users that are going here!", itineraries_path(:country => ii.country, :date_startm => ii["date_start(2i)"], :date_startd => ii["date_start(3i)"], :date_starty => ii["date_start(1i)"], :date_endm => ii["date_end(2i)"], :date_endd => ii["date_end(3i)"], :date_endy => ii["date_end(1i)"]) %> <br>
+	<% end %> <br>
+
+<% end %>

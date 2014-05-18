@@ -3,8 +3,9 @@ class ItinerariesController < ApplicationController
   before_action :authenticate_user
   # GET /itineraries
   # GET /itineraries.json
+  
   def index
-    @itineraries = @itinerarylist.itineraries.all
+    @itineraries = Itinerary.where(:country => params[:country])
   end
 
 
@@ -14,7 +15,7 @@ class ItinerariesController < ApplicationController
 
   # GET /itineraries/new
   def new
-    @itinerary = @itinerarylist.itineraries.all
+    @itinerary = Itinerary.new
   end
 
   def edit

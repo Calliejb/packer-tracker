@@ -1,24 +1,23 @@
 
 <h1> Hello <%= @user.username %>! </h1>
 
-<div class = "current"> 
-		<% if !signed_in? %>
-        	<p><%= link_to "Sign Up Now!", new_user_path %></p>
-        <% else %>
-        	<p>Enjoy using PackerTracker!</p>
-        <% end %>
-		</div>
-
-
+You have <%= @user.itinerary_lists.count %> 
+<% if @user.itinerary_lists.count == 1 %>
+itinerary!
+<% else %>
+itineraries!
+<% end %>
 
 <div class = "itinerarylists">
 
 
-	  <% @itinerarylists.each do |i| %>
+	  <% @user.itinerary_lists.each do |u| %>
 	  	<ul>
-	        <li><%= i.name %></li>
-	        <li><%= link_to 'See Itinerary', itinerarylist_path %></li>
+	        <li><%= u.name %></li>
+	        <li><%= link_to 'See Itinerary', itinerary_list_path(u) %></li>
     	</ul>
     <% end %>
 
 <%= link_to "Create a New Itinerary!", new_itinerary_list_path %>
+
+

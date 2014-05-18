@@ -1,25 +1,31 @@
 <%= form_for(@itinerarylist) do |f| %>
 	
-	Name: <%= f.text_field :name %><br>
+	<%= f.label :name %><br>
+	<%= f.text_field :name %><br>
 
 <p>
-	<%= f.fields_for @itinerarylist.itineraries do |i| %>
-	
-	<div class = fields>
-		<%= i.label :country, "Add a Country" %><br>
-		<%= i.text_field :country %><br><br>
 
-		<%= i.label :date_start, "Arrival Date" %><br>
-		<%= i.date_select :date_start, id: "dateField" %><br><br>
+		<%= f.fields_for :itineraries do |builder| %>
 
-		<%= i.label :country, "Departure Date" %><br>
-		<%= i.date_select :date_end, id: "dateField" %>
-	</div>
+			<div class = "fields">
+		
+				<%= builder.label :country, "Add a Country" %><br>
+				<%= builder.text_field :country %><br><br>
 
-	<% end %>
+				<%= builder.label :date_start, "Arrival Date" %><br>
+				<%= builder.date_select :date_start, id: "dateField" %><br><br>
 
-		<%= f.hidden_field :_destroy %>
-	<%= link_to_function "remove", "remove_fields(this)" %>
+				<%= builder.label :country, "Departure Date" %><br>
+				<%= builder.date_select :date_end, id: "dateField" %><br>
+			</div>
+
+				<%= f.hidden_field :_destroy %>
+				<%= link_to_function "remove", "remove_fields(this)" %>
+
+		<% end %>
+
+
+
 </p>
 
 

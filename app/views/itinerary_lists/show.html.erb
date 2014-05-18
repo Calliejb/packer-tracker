@@ -1,8 +1,14 @@
-<h1><%= @itinerarylist.name %></h1>
 
-<% for itinerary in @itinerarylist.itineraries %>
-  <li><%= itinerary.country %></li>
-<% end %>
+
+
+<h1>This Itinerary is called "<%= @itinerarylist.name %>"</h1>
+
+<% @itinerarylist.itineraries.each do |i|%>
+  <li><%= i.country %></li>
+  <%= i["date_start(2i)"] %>/<%= i["date_start(3i)"] %>/<%= i["date_start(1i)"] %> --
+  <%= i["date_start(2i)"] %>/<%= i["date_start(3i)"] %>/<%= i["date_end(1i)"] %>
+  <%= link_to "Search these dates", itineraries_path(:country => i.country, :date_startm => i["date_start(2i)"], :date_startd => i["date_start(3i)"], :date_starty => i["date_start(1i)"], :date_endm => i["date_end(2i)"], :date_endd => i["date_end(3i)"], :date_endy => i["date_end(1i)"]) %>
+<% end %> <br>
 
 
 <%= link_to "Edit", edit_itinerary_list_path(@itinerarylist) %>
