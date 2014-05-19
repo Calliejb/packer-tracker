@@ -2,6 +2,7 @@
 <body class="itlistshow">
 <div class="jumbotron">
 <h1><%= @itinerarylist.name %></h1>
+<h3>Created by <%= @itinerarylist.user.username %></h3>
 
 <% @itinerarylist.itineraries.each do |i|%>
   <h2><%= i.country %></h2>

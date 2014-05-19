@@ -6,6 +6,10 @@ PackerTrackerApp::Application.routes.draw do
   resources :itinerary_lists
   resources :welcome
 
+  resources :users, :shallow => true do |user|
+    resources :itinerary_lists
+  end
+
 
 
 

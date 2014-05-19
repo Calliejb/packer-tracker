@@ -7,7 +7,12 @@
 
 	<%= @itinerarylists.each do |i| %>
 	<tr>
-			<td style="width: 250px"><h2> <%= link_to i.name, i %> </h2></td>
+			<td style="width: 250px"><h2> <%= link_to i.name, i %> </h2>
+			Created by <%= i.user.username %>
+
+			</td>
+
+
 
 			<td>
 			<%= i.itineraries.each do |ii| %>
