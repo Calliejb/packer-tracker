@@ -1,33 +1,44 @@
 <body>
 
+	<div class = "container-fluid">
 
-
-<div class = "container-fluid">
-	<div class = "app-logo">
-		<h1> PackerTracker </h1>
-	</div>
-</div>
-
-<div class = "container-fluid">
-	<div class = "app-info">
-		PackerTracker allows you to enter in your travel itineraries and find other backpackers who will be staying in the same places as you! Travelling is always more fun with others. Create. Correspond. Connect.
-
-		<h2>PackerTracker</h2>
-
-		<div class = "signupbutton"> 
-		<% if !signed_in? %>
-        	<p><%= link_to "Sign Up Now!", new_user_path %></p>
-        <% else %>
-        	<p>Enjoy using PackerTracker!</p>
-        <% end %>
+		<div class = "app-logo">
+			<h1> PackerTracker </h1>
+			
+			<div class = "logo container-fluid">
+				<div class = "col-md-3"></div>
+				<div class = "col-md-6">
+					<h3>Create a travel itinerary.<br><br>
+					Check out other itineraries similar to yours<br><br>
+					Share your itinerary with friends or connect with strangers who are travelling to the same places.</h3>
+				</div>
+				<div class = "col-md-3"></div>
+			</div>		
 		</div>
-
 	</div>
-</div>
 
-<div class = "container-fluid">
-	<div class = "sponsored-by">
+	<div class = "container-fluid">
+		<div class = "app-info">
+			
+
+			<h2>Create. Correspond. Connect.</h2>
+
+			<div class = "signupbutton"> 
+			<% if !signed_in? %>
+	        	<p><%= link_to "Sign Up Now!", new_user_path, class: "btn btn-default" %></p>
+	        	<br><br><br>
+	        <% else %>
+	        	<p>Enjoy using PackerTracker!</p>
+	        	<br><br><br>
+	        <% end %>
+			</div>
+
+		</div>
 	</div>
-</div>
+
+	<div class = "container-fluid">
+		<div class = "sponsored-by">
+		</div>
+	</div>
 
 </body>

@@ -2,11 +2,77 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$backgroundcolor: #3BAED1;
 $roboto: 'Roboto Slab', serif;
 $shadow: 'Shadows Into Light', cursive;
 
-.app-logo {
-	background-image: url('images/World-map-wallpaper.jpg');
-	font-family: $shadow;
-	height: 200px;
+body {
+	background-color: $backgroundcolor;
+	font-family: $roboto;
 }
+.app-logo {
+	font-family: $shadow;
+
+	.logo {
+		background-image: url(World-map-wallpaper.jpg);
+		background-size: 80%;
+		height: 400px;
+
+		h3 {
+			height: 380px;
+			width: 100%;
+			padding: 80px 20px 50px 20px;
+			text-align: center;
+			border-radius: 50%;
+			background-color: rgba(#D3E2E8, .7);
+			border: 8px solid #637075;
+			font-family: $roboto;
+		}
+	}
+	
+}
+
+.app-info {
+	text-align: center;
+}
+
+.aboutpt {
+	color: white;
+	padding: 50px;
+	text-align: center;
+}
+
+.profile {
+	text-align: center;
+}
+
+.profile-1 {
+	background-image: url(callieface.jpg);
+	background-size: 100%;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+
+.profile-2 {
+	background-image: url(phil.jpg);
+	background-size: 100%;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+
+.profile-3 {
+	background-image: url(dillon.jpg);
+	background-size: 130%;
+	background-position: -50px 0px;
+	left: 20px;
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+
+
