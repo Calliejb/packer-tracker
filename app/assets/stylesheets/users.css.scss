@@ -3,8 +3,11 @@ $backgroundcolor: #3BAED1;
 
 body {
 	background-color: $backgroundcolor;
+}
 
-	.app-logo {
-
-	}
+.user-form {
+	border: 2px solid black;
+	border-radius: 10%;
+	margin: 100px;
+	padding: 30px;
 }

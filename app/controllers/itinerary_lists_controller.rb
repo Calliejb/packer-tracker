@@ -44,7 +44,7 @@ class ItineraryListsController < ApplicationController
 
   def destroy
     @itinerarylist.destroy
-    redirect_to itinerary_list_path
+    redirect_to user_path
   end
 
 
