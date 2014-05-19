@@ -1,15 +1,15 @@
 
 <div class= "well well-lg">
 	<%= form_for(@itinerarylist) do |f| %>
-		<div class = "row">
-			<div class="form-group col-sm-3">
+		<div class = "container-fluid">
+			<div class="col-md-3">
 				<%= f.label :name, "Itinerary Name" %><br>
-				<%= f.text_field :name %><br>
+				<%= f.text_field :name %><br><br>
 			</div>
 		</div>
 			<%= f.fields_for :itineraries do |builder| %>
-		<div class = "row">
-				<div class="form-group col-sm-3">
+		<div class = "container-fluid">
+				<div class="col-md-3">
 					<div class = "fields">
 
 						<%= builder.label :country, "Add a Country" %><br>
@@ -26,10 +26,11 @@
 					<%= link_to_function "remove", "remove_fields(this)" %>
 				</div>
 			<% end %>
+
 		</div>
 
 
-	  <div class="row">
+	  <div class="container-fluid">
 	  	<div class = "col-sm-3">
 	    <%= f.submit 'Submit!', class: "btn btn-lg btn-success" %>
 		</div>

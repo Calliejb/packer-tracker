@@ -1,23 +1,24 @@
 
-<h1> Hello <%= @user.username %>! </h1>
-
-You have <%= @user.itinerary_lists.count %> 
-<% if @user.itinerary_lists.count == 1 %>
-itinerary!
-<% else %>
-itineraries!
-<% end %>
-
-<div class = "itinerarylists">
+<body class= "user-show">
+	<h1> Hello <%= @user.username %>! </h1>
 
 
-	  <% @user.itinerary_lists.each do |u| %>
-	  	<ul>
-	        <li><%= u.name %></li>
-	        <li><%= link_to 'See Itinerary', itinerary_list_path(u) %></li>
-    	</ul>
-    <% end %>
+	<div class = "itinerarylists">
+		<h3>You have <%= @user.itinerary_lists.count %> 
+		<% if @user.itinerary_lists.count == 1 %>
+		itinerary!
+		<% else %>
+		itineraries!
+		<% end %></h3>
 
-<%= link_to "Create a New Itinerary!", new_itinerary_list_path %>
 
-<%= link_to "Edit Profile", edit_user_path(@user) %>
+		  <% @user.itinerary_lists.each do |u| %>
+		        <h3><%= u.name %></h3> <br>
+		        <h4><%= link_to 'See Itinerary', itinerary_list_path(u) %></h4>
+	    <% end %>
+
+	    <br>
+
+	<%= link_to "Create a New Itinerary!", new_itinerary_list_path %>
+</body>
+

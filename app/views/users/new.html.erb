@@ -1,6 +1,6 @@
 
 
-<form class="form-horizontal user-form" role="form">
+<div class="form-horizontal user-form" role="form">
 	<%= form_for @user, :html => { :multipart => true } do |f| %>
 		<div class="form-group">
 	 		<%= f.text_field :username, class: "form-control", placeholder: "Username" %>
@@ -16,5 +16,5 @@
 	  		<%= f.submit "Sign Up!", class: "btn btn-default" %>
 		</div>
 	<% end %>
-</form>
+</div>
 

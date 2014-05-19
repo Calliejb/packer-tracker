@@ -1,7 +1,6 @@
 require "bcrypt"
 class User
   include Mongoid::Document
-  include Mongoid::Paperclip
   
   field :username, type: String
   field :email, type: String

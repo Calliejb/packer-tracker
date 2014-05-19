@@ -1,0 +1,29 @@
+ $backgroundcolor: #3BAED1;
+
+body {
+	background-color: $backgroundcolor;
+}
+
+.allit {
+	width: 100%;
+	height: 100px;
+	padding: 10px 0px 0px 30px;
+	background-color: darken($backgroundcolor, 20%);
+}
+
+.table {
+	margin: 10px 80px 0px 30px;
+	width: 800px;
+	tr {
+		border: 5px solid white;
+	}
+	td {
+		border: 5px solid white;
+		background-color: lighten($backgroundcolor, 20%);
+	}	
+}
+
+
+.itlistshow {
+	background-color: $backgroundcolor;	
+}

@@ -1,8 +1,8 @@
 <h1>Dates that match yours!</h1>
 
   <% @itineraries.each do |i| %>
-    <li> <%=i.itinerary_list.user.username %> </li>
-    <li><%= i.country %></li>
+    <h2> <%=i.itinerary_list.name %> </h2>
+    <p><%= i.country %></p>
     <%= i["date_start(2i)"] %>/<%= i["date_start(3i)"] %>/<%= i["date_start(1i)"] %> --
     <%= i["date_start(2i)"] %>/<%= i["date_start(3i)"] %>/<%= i["date_end(1i)"] %>
   <% end %>

@@ -43,8 +43,11 @@ class ItineraryListsController < ApplicationController
   end
 
   def destroy
-    @itinerarylist.destroy
-    redirect_to user_path
+    @itinerarylist = ItineraryList.find(params[:id])
+    if @itinerarylist.present?
+      @itinerarylist.destroy
+    end
+    redirect_to user_path(current_user)
   end
 
 

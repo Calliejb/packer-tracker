@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
 	def current_user
-		# memoization ||=
 		if session[:remember_token]
 			@current_user ||=  User.find(session[:remember_token])
 		else
@@ -16,7 +15,7 @@ class ApplicationController < ActionController::Base
 	end
 	def authenticate_user
 		if !signed_in?
-			redirect_to new_sessions_path
+			redirect_to new_session_path
 		end
 	end
 

@@ -1,4 +1,6 @@
 
+$backgroundcolor: #3BAED1;
+
 body {
 	background-image: url(IMG_1688.JPG);
 	background-size: 130%;
@@ -14,4 +16,20 @@ body {
 	text-align: center;
 }
 
+.user-show {
+	background-image: url(IMG_0536.JPG);
+	background-size: 130%;
+	background-repeat: none;
+	h1 {
+		margin-left: 30px;
+	}
+}
+
+.itinerarylists {
+	width: 90%;
+	background-color: $backgroundcolor;
+	padding: 20px 0px 40px 30px;
+	margin-left: 10px;
+	border-radius: 20px;
+}
 
