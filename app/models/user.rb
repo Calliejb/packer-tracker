@@ -6,12 +6,10 @@ class User
   field :email, type: String
   field :password_digest, type: String
 
-  field :name, type: String
-  field :hometown, type: String
-  field :about, type: String
-
   has_many :itinerary_lists, :dependent => :destroy
   accepts_nested_attributes_for :itinerary_lists, :allow_destroy => true
+
+  embeds_one :profile
 
   def password
     @password

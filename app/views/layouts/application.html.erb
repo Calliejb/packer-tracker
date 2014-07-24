@@ -29,7 +29,7 @@
         <% if !signed_in? %>
           <li><%= link_to "About", new_welcome_path %></li>
         <% else %>
-          <li><%= link_to "New Itinerary", new_itinerary_list_path %></li>
+          <li><%= link_to "New Itinerary", new_itinerary_list_path(current_user) %></li>
           <li><%= link_to "Search Itineraries", itinerary_lists_path %></li>
         <% end %>
       </ul>

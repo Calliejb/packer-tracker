@@ -1,5 +1,10 @@
 PackerTrackerApp::Application.routes.draw do
   
+  get "profiles/new"
+  get "profiles/edit"
+  get "profiles/create"
+  get "profiles/update"
+  get "profiles/destroy"
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:index, :new, :create, :show]
   resources :itineraries, except: [:destroy]

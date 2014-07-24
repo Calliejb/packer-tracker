@@ -1,4 +1,5 @@
 class ItineraryListsController < ApplicationController
+  # before_action :set_user
 
   def index
     @itinerarylists = ItineraryList.all
@@ -10,7 +11,7 @@ class ItineraryListsController < ApplicationController
 
   def new
     @itinerarylist = ItineraryList.new
-    3.times do
+    4.times do
       @itinerarylist.itineraries.build
     end
       
@@ -50,6 +51,10 @@ class ItineraryListsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+private
 
+# def set_user
+#   @user = User.find(params[:current_user_id])
+# end
 
 end

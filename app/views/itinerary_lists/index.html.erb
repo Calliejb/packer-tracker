@@ -5,19 +5,17 @@
 
 <table class="table table-hover">
 
-	<%= @itinerarylists.each do |i| %>
+	<% @itinerarylists.each do |i| %>
 	<tr>
-			<td style="width: 250px"><h2> <%= link_to i.name, i %> </h2>
-			Created by <%= i.user.username %>
-
+			<td style="width: 250px">
+				<h2> <%= link_to i.name, i %> </h2>
+				<p> Created by <%= i.user.username %></p>
 			</td>
 
-
-
 			<td>
-			<%= i.itineraries.each do |ii| %>
-	  			
-	  			<%= link_to ii.country, itineraries_path(:country => ii.country, :date_startm => ii["date_start(2i)"], :date_startd => ii["date_start(3i)"], :date_starty => ii["date_start(1i)"], :date_endm => ii["date_end(2i)"], :date_endd => ii["date_end(3i)"], :date_endy => ii["date_end(1i)"]) %><br>
+			<% i.itineraries.each do |ii| %>
+	  			<%= link_to ii.country, itineraries_path(:country => ii.country, :date_startm => ii["date_start(2i)"], :date_startd => ii["date_start(3i)"], :date_starty => ii["date_start(1i)"], :date_endm => ii["date_end(2i)"], :date_endd => ii["date_end(3i)"], :date_endy => ii["date_end(1i)"]) %>
+	  			<br>
 			<% end %> 
 			</td>
 		</tr>

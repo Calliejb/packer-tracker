@@ -1,10 +1,10 @@
 <body>
-<h1>Other travellers are going to this country!</h1>
+<h1>Travellers going to this country</h1>
 
 <div class = "jumbotron">
   <% @itineraries.each do |i| %>
-    <h2> <%=i.itinerary_list.name %> </h2>
-    <h3> Created by <%=i.itinerary_list.user.username %></h3>
+    <h2> <%= i.itinerary_list.name %> </h2>
+    <h3> Created by <%= i.itinerary_list.user.username %></h3>
     <p><%= i.country %></p>
     <%= i["date_start(2i)"] %>/<%= i["date_start(3i)"] %>/<%= i["date_start(1i)"] %> --
     <%= i["date_end(2i)"] %>/<%= i["date_end(3i)"] %>/<%= i["date_end(1i)"] %>
